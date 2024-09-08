@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "nodemon --watch src/ --exec ts-node src/index.ts -e ts",
     "prettier": "onchange \"**/*\" -- prettier --write --ignore-unknown {{changed}}",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "start": "node src/index.js",
+    "build": "tsc"
   },
   "keywords": [],
   "author": "Wesley-Fernandes",
