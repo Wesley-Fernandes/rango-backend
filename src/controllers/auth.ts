@@ -1,4 +1,4 @@
-import { Request, Response } from 'express';
+import type { Request, Response } from 'express';
 import { userSchema, userLoginSchema } from '../schema/user';
 import { decript, encript, genToken } from '../utils/criptografy';
 import REPOSITORY from '../repository';

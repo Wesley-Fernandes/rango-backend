@@ -1,4 +1,4 @@
-import { Request, Response } from 'express';
+import type { Request, Response } from 'express';
 import { UnauthorizedError } from '../utils/api-errors';
 import { decode } from '../utils/criptografy';
 
