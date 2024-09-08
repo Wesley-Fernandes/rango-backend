@@ -1,3 +1,4 @@
+// biome-ignore lint/style/useImportType: <explanation>
 import { Prisma } from "@prisma/client";
 
 export type PermissionType = Prisma.PermissionGetPayload<{
