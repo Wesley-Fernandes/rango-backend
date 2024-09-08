@@ -9,5 +9,7 @@ export class AuthRoutes {
     this.route = router;
     this.route.post('/register', this.auth.register);
     this.route.post('/login', this.auth.login);
+    this.route.get('/users', this.auth.list);
+    this.route.get('/users/:id', this.auth.unique);
   }
 }

@@ -27,4 +27,19 @@ export class Auth {
     }
     return res.status(401).json({ message: 'Dados invalidos.' });
   }
+
+
+  async list(req: Request, res: Response){
+    const users = await REPOSITORY.user.list();
+    return res.status(200).json(users);
+  }
+
+  async unique(req: Request, res: Response){
+    const id = req.params.id;
+    if(!id){
+      return res.status(401).json({ message: 'ID não fornecido.' });
+    }
+    const users = await REPOSITORY.user.findById(id);
+    return res.status(200).json(users);
+  }
 }

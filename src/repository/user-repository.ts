@@ -1,5 +1,5 @@
 import database from "../config/database";
-import { USER } from "../schema/user";
+import type { USER } from "../schema/user";
 
 
 export class UserRepository{
@@ -33,6 +33,18 @@ export class UserRepository{
         return await database.user.findUnique({
             where: { email },
             select: { id: true, password: true },
+        })
+    }
+
+    async findById(id: string){
+        return await database.user.findUnique({
+            where: { id },
+            select: { id: true, email: true, username: true, birth: true },
+        })
+    }
+    async list(){
+        return await database.user.findMany({
+            select: { id: true, username:true },
         })
     }
 }
