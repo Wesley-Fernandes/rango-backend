@@ -1,5 +1,5 @@
 import { compareSync, genSaltSync, hashSync } from 'bcrypt';
-import { JwtPayload, sign, verify } from 'jsonwebtoken';
+import { sign, verify } from 'jsonwebtoken';
 import env from '../config/env';
 
 export const encript = (password: string): string => {
