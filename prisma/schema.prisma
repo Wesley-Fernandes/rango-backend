@@ -30,14 +30,16 @@ model Permission{
 }
 
 model Work{
-  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  id String @id @default(auto()) @map("_id") @db.ObjectId
   description String
   createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  start DateTime
+  end DateTime?
   userID  String @db.ObjectId
-  prevID String @db.ObjectId
-  nextID String @db.ObjectId
+  prevID String? @db.ObjectId
+  nextID String? @db.ObjectId
   user User @relation("works", fields: [userID], references: [id])
   prev  User?  @relation("prevOperation", fields: [prevID], references: [id])
   next  User?  @relation("nextOperation", fields: [nextID], references: [id])
+  finish Boolean @default(false)
 }
